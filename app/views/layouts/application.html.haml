@@ -1,10 +1,24 @@
+
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title TrainingApp
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .main-page-container
+      = link_to "Home", root_path
+      - if user_signed_in?
+        %p
+          = current_user.email
+          = link_to "Log out", destroy_user_session_path, method: :delete
+      - else
+        %p
+          = link_to "Log in", new_user_session_path
+          = link_to "Sign up", new_user_registration_path
+      - flash.each do |name, msg|
+        .alert
+          %button.close{"data-dismiss" => "alert", :type => "button"} &times;
+          %p= msg
+      = yield
