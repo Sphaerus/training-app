@@ -57,6 +57,8 @@ GEM
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    decent_exposure (3.0.0)
+      activesupport (>= 4.0)
     devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -192,6 +194,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha3)
   byebug
   coffee-rails (~> 4.2)
+  decent_exposure (= 3.0.0)
   devise
   haml-rails (~> 0.9)
   jbuilder (~> 2.5)

@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 	before_action :authenticate_user!
+	expose :topics, ->{ Topic.all }
 	
 	def index
-		@topics = Topic.all
+		
 	end
 end

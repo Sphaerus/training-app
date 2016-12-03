@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'decent_exposure', '3.0.0'
+
 #authentication
 gem 'devise'
 
