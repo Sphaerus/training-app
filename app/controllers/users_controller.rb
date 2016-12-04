@@ -2,8 +2,9 @@ class UsersController < ApplicationController
 	expose :user
 
 	def update
+		@account_form = ::AccountForm.new(current_user)
 		respond_to do |format|
-			if user.update_attributes(user_params)
+			if @account_form.submit(user_params)
 				format.html { redirect_to root_path }
 			else
 				format.html { redirect_to account_path }

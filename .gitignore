@@ -1,1 +1,3 @@
 tmp/*
+log/development.log
+.byebug_history

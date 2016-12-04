@@ -1,2 +1,4 @@
 %h4= "My account"
-= render "form"
+= simple_form_for @account_form do |f|
+	= f.input :nickname
+	= f.submit
