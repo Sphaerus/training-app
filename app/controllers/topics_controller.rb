@@ -6,15 +6,18 @@ class TopicsController < ApplicationController
 	end
 
 	def new
+		@topic_form = TopicForm.new(topic)
 	end
 
 	def edit
-
+		@topic_form = TopicForm.new(topic)
 	end
 
 	def create
+		@topic_form = TopicForm.new(topic)
+
 		respond_to do |format|
-			if topic.save
+			if @topic_form.submit(topic_params)
 				format.html { redirect_to topic_path(topic) , notice: "success" }
 			else
 				format.html { render action: :new, alert: "no success:(" }
@@ -23,8 +26,10 @@ class TopicsController < ApplicationController
 	end
 
 	def update
+		@topic_form = TopicForm.new(topic)
+
 		respond_to do |format|
-			if topic.save
+			if @topic_form.submit(topic_params)
 				format.html { redirect_to topic_path(topic) , notice: "success" }
 			else
 				format.html { render action: :new, alert: "no success:(" }

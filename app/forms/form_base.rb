@@ -25,6 +25,10 @@ class FormBase
 		ActiveModel::Name.new(self, nil, name)
 	end
 
+	def persisted?
+		!model.new_record?
+	end
+
 	private
 
 	def apply_form

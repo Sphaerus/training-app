@@ -3,10 +3,6 @@ class AccountForm < FormBase
 
 	delegate :nickname, to: :model
 
-	def persisted?
-		true
-	end
-
 	private
 
 	def self.name
