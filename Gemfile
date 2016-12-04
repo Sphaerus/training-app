@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#forms
+gem 'simple_form'
 
 gem 'decent_exposure', '3.0.0'
 

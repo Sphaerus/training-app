@@ -1,2 +1,6 @@
 - topics.each do |topic|
-	= topic.topic
+	.topic
+		%h4= topic.topic
+		%p
+			= link_to "Edit", edit_topic_path(topic)
+			= link_to "Delete", topic_path(topic), method: :delete
